@@ -1,0 +1,11 @@
+<resources>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark">#FF4B4B4B</color>
+    <color name="green">#FF66CC00</color>
+    <color name="blue">#FF4696DA</color>
+    <color name="gray">#FFC0C0C0</color>
+    
+    <color name="tab_bg">#FFDDDDDD</color>
+    
+</resources>
