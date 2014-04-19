@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.shz.nfcexchange.MainActivity"
+            android:name="com.shz.activity.MainActivity"
             android:label="@string/app_label" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +23,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstActivity"
+            android:name="com.shz.activity.FirstActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name="com.shz.activity.SecondActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".ThirdActivity"
+            android:name="com.shz.activity.ThirdActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

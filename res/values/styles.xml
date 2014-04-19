@@ -21,9 +21,8 @@
         <item name="android:textSize">@dimen/text_size_title</item>
         <item name="android:textColor">@color/color_text_tab</item>
         <item name="android:ellipsize">marquee</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:scaleType">fitCenter</item>
-        <item name="android:background">@drawable/tab_bottom</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_height">@dimen/layout_tab_height</item>
@@ -31,7 +30,7 @@
         <item name="android:layout_marginBottom">0dp</item>
         <item name="android:button">@null</item>
         <item name="android:singleLine">true</item>
-        <item name="android:drawablePadding">3dp</item>
+        <item name="android:drawablePadding">0dp</item>
         <item name="android:animationDuration">400</item>
     </style>
 

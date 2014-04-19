@@ -1,4 +1,4 @@
-package com.shz.nfcexchange;
+package com.shz.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +15,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.shz.indicator.UnderlinePageIndicator;
+import com.shz.nfcexchange.R;
+
 @SuppressWarnings("deprecation")
-public class MainActivity extends ActionBarActivity implements
-		OnCheckedChangeListener {
+public class MainActivity extends ActionBarActivity implements OnCheckedChangeListener {
 
 	private static final String TAG = "MainActivity";
 
@@ -31,9 +32,9 @@ public class MainActivity extends ActionBarActivity implements
 	private List<View> listViews;
 	private LocalActivityManager mActivityManager = null;
 	private MyPagerAdapter mpAdapter = null;
+	private UnderlinePageIndicator mIndicator = null;
 
-	private static final int[] RADIO_BTN_IDS = new int[] { R.id.radio_one,
-			R.id.radio_two, R.id.radio_three };
+	private static final int[] RADIO_BTN_IDS = new int[] { R.id.radio_one, R.id.radio_two, R.id.radio_three };
 	private static final String TAB_1 = "one";
 	private static final String TAB_2 = "two";
 	private static final String TAB_3 = "three";
@@ -89,16 +90,21 @@ public class MainActivity extends ActionBarActivity implements
 	/** Init Tabs */
 	private void initTabs() {
 		listViews = new ArrayList<View>();
-		mpAdapter = new MyPagerAdapter(listViews);
 		listViews.add(getView(TAB_1, mFirstIntent));
 		listViews.add(getView(TAB_2, mSecondIntent));
 		listViews.add(getView(TAB_3, mThirdIntent));
 
+		mpAdapter = new MyPagerAdapter(listViews);
 		mViewPager = (ViewPager) findViewById(R.id.viewPager);
 		mViewPager.setOffscreenPageLimit(0);
 		mViewPager.setAdapter(mpAdapter);
 		mViewPager.setCurrentItem(mCurrentPageIndex);
-		mViewPager.setOnPageChangeListener(new MyOnPageChangeListener());
+
+		mIndicator = (UnderlinePageIndicator) findViewById(R.id.indicator);
+		mViewPager.setOnPageChangeListener(mIndicator);
+		mIndicator.setViewPager(mViewPager);
+		mIndicator.setFades(false);
+		mIndicator.setOnPageChangeListener(new MyOnPageChangeListener());
 
 		radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
 		radioGroup.setOnCheckedChangeListener(this);
@@ -113,8 +119,7 @@ public class MainActivity extends ActionBarActivity implements
 	@Override
 	protected void onResume() {
 		Log.i(TAG, "on resume.");
-		mActivityManager.startActivity(TABS[mCurrentPageIndex],
-				mIntents[mCurrentPageIndex]);
+		mActivityManager.startActivity(TABS[mCurrentPageIndex], mIntents[mCurrentPageIndex]);
 		mActivityManager.dispatchResume();
 		super.onResume();
 	}
@@ -152,9 +157,9 @@ public class MainActivity extends ActionBarActivity implements
 			break;
 		}
 		mViewPager.setCurrentItem(mCurrentPageIndex);
+		Log.d(TAG, "On tab changed: id=" + mCurrentPageIndex);
 
-		mActivityManager.startActivity(TABS[mCurrentPageIndex],
-				mIntents[mCurrentPageIndex]);
+		mActivityManager.startActivity(TABS[mCurrentPageIndex], mIntents[mCurrentPageIndex]);
 		mActivityManager.dispatchResume();
 	}
 
@@ -215,14 +220,13 @@ public class MainActivity extends ActionBarActivity implements
 	}
 
 	/**
-	 * ViewPager Listener £¬Keeping TabHost synchronized with ViewPager
+	 * ViewPager Listener £¬Keeping Title RadioGroup synchronized with ViewPager
 	 */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 
 		@Override
 		public void onPageSelected(int arg0) {
-			RadioButton rb = (RadioButton) radioGroup
-					.findViewById(RADIO_BTN_IDS[arg0]);
+			RadioButton rb = (RadioButton) radioGroup.findViewById(RADIO_BTN_IDS[arg0]);
 			rb.setChecked(true);
 		}
 

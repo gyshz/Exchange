@@ -6,6 +6,7 @@
     <color name="blue">#FF4696DA</color>
     <color name="gray">#FFC0C0C0</color>
     
-    <color name="tab_bg">#FFDDDDDD</color>
-    
+    <color name="default_tab_title_selected_color">#FF33B5E5</color>
+    <color name="default_tab_bg_color">#FFDDDDDD</color>
+
 </resources>
