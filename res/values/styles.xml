@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -21,9 +21,10 @@
         <item name="android:textSize">@dimen/text_size_title</item>
         <item name="android:textColor">@color/color_text_tab</item>
         <item name="android:ellipsize">marquee</item>
-        <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:scaleType">fitCenter</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_weight">1.0</item>
         <item name="android:layout_height">@dimen/layout_tab_height</item>
         <item name="android:layout_marginTop">0dp</item>
