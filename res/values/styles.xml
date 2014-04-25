@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -17,7 +17,7 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="tab_radio_style">
+    <style name="TabTitleTheme">
         <item name="android:textSize">@dimen/text_size_title</item>
         <item name="android:textColor">@color/color_text_tab</item>
         <item name="android:ellipsize">marquee</item>
@@ -33,6 +33,11 @@
         <item name="android:singleLine">true</item>
         <item name="android:drawablePadding">0dp</item>
         <item name="android:animationDuration">400</item>
+    </style>
+
+    <style name="AnimationPopupView">
+        <item name="android:windowEnterAnimation">@anim/alpha_appear</item>
+        <item name="android:windowExitAnimation">@anim/alpha_disappear</item>
     </style>
 
 </resources>

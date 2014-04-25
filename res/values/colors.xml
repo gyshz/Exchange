@@ -8,5 +8,7 @@
     
     <color name="default_tab_title_selected_color">#FF33B5E5</color>
     <color name="default_tab_bg_color">#FFDDDDDD</color>
+    
+    <color name="color_list_pressed">#FF4696DA</color>
 
 </resources>

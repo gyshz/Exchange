@@ -79,8 +79,8 @@ public class MainActivity extends ActionBarActivity implements OnCheckedChangeLi
 
 	/** Init Views */
 	private void initViews() {
-		mFirstIntent = new Intent(this, FirstActivity.class);
-		mSecondIntent = new Intent(this, SecondActivity.class);
+		mFirstIntent = new Intent(this, OwnerActivity.class);
+		mSecondIntent = new Intent(this, HoldersActivity.class);
 		mThirdIntent = new Intent(this, ThirdActivity.class);
 		mIntents = new Intent[] { mFirstIntent, mSecondIntent, mThirdIntent };
 

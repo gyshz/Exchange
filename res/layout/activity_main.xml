@@ -14,20 +14,20 @@
 
         <RadioButton
             android:id="@+id/radio_one"
-            style="@style/tab_radio_style"
+            style="@style/TabTitleTheme"
             android:checked="true"
             android:gravity="center"
-            android:text="@string/tab_one" />
+            android:text="@string/tab_card_own" />
 
         <RadioButton
             android:id="@+id/radio_two"
-            style="@style/tab_radio_style"
+            style="@style/TabTitleTheme"
             android:gravity="center"
-            android:text="@string/tab_two" />
+            android:text="@string/tab_card_holders" />
 
         <RadioButton
             android:id="@+id/radio_three"
-            style="@style/tab_radio_style"
+            style="@style/TabTitleTheme"
             android:gravity="center"
             android:text="@string/tab_three" />
     </RadioGroup>

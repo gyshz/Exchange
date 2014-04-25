@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layout_operation"
+        android:gravity="center"
+        android:padding="20dp" >
+
+        <include
+            android:id="@+id/include_my_card"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/card_style_one" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_operation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="发送"
+            android:textSize="@dimen/text_size_mid" />
+
+        <Button
+            android:id="@+id/btn_receive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="接收"
+            android:textSize="@dimen/text_size_mid" />
+    </LinearLayout>
+
+</RelativeLayout>

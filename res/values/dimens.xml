@@ -3,9 +3,9 @@
 
     <!-- Text Size -->
     <dimen name="text_size_title">16sp</dimen>
-    <dimen name="text_size_max">15sp</dimen>
+    <dimen name="text_size_max">16sp</dimen>
     <dimen name="text_size_mid">14sp</dimen>
-    <dimen name="text_size_min">13sp</dimen>
+    <dimen name="text_size_min">12sp</dimen>
     
     <!-- Layout Size -->
     <dimen name="layout_tab_height">40dp</dimen>
